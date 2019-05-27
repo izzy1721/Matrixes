@@ -7,6 +7,7 @@ void printInstructions()
               << "S: Subtract two matrices\n"
               << "A: Add two matrices\n"
               << "M: Multiply two matricies\n"
+              << "G: Solve a matrix using Gauss-Jordan Elimination\n"
               << "P: Print Commands List\n";
 } //end of printInstructions()
 
@@ -49,6 +50,10 @@ int main()
         else if (strcmp(command, "M") == 0)
         {
             doMultiply();
+        }
+        else if (strcmp(command, "G") == 0)
+        {
+            doGauss();
         }
         //get next line of input
         printf("\nCommand to do: \n");
