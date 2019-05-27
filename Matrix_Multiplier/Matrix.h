@@ -54,6 +54,11 @@ public:
     {
         delete[] arr;
     }
+    
+    //forward definitions of methods to make outside of class 
+    //update makefile when adding in a cpp file for newly created
+    //methods. Test locally before committing
+    Matrix subtraction(Matrix A, Matrix B);
 
     int **getArr() { return arr; }
 
@@ -76,8 +81,8 @@ public:
     void compute2Dindex(int &x, int &y, int pos)
     {
         int width = getXSize();
-        x = pos / width;
-        y = pos % width;
+        x = pos % width;
+        y = pos / width;
     } //end of compute2Dindex()
 
     //push new element into the next available position in the matrix
@@ -132,13 +137,27 @@ public:
             return;
         }
 
+        for (int i = 0; i < (x * y) + 3; i++)
+        {
+            std::cout << "-";
+        }
+        std::cout << "\n";
+
         for (int i = 0; i < x; i++)
         {
+            std::cout << "| ";
             for (int j = 0; j < y; j++)
             {
                 std::cout << temp[i][j] << " ";
             }
+            std::cout << "| ";
             std::cout << std::endl;
         }
+
+        for (int i = 0; i < (x * y) + 3; i++)
+        {
+            std::cout << "-";
+        }
+        std::cout << "\n";
     } //end of printArr()
 };
