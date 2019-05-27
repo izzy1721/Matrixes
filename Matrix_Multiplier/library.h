@@ -3,7 +3,6 @@ The purpose of this header is to provide foward definitions of all callOps.cpp f
 Include all libraries used within this heder file for ease of use elsewhere. 
 */
 
-
 #include <iostream>
 #include <string.h>
 #include "Matrix.h"
