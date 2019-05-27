@@ -55,13 +55,15 @@ public:
         delete[] arr;
     }
 
-    ///Forward definitions of methods to make outside of class 
+    ///Forward definitions of methods to make outside of class
     //in the ops file. Test locally before committing.
     Matrix *subtraction(Matrix *A, Matrix *B);
 
     Matrix *addition(Matrix *A, Matrix *B);
 
     Matrix *multiplication(Matrix *A, Matrix *B);
+
+    Matrix *gauss(Matrix *A);
 
     int **getArr() { return arr; }
 
@@ -163,4 +165,4 @@ public:
         }
         std::cout << "\n";
     } //end of printArr()
-};
+};    //end of Matrix class
