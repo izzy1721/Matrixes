@@ -6,19 +6,19 @@ void printInstructions()
               << "Q: Quit Program\n"
               << "S: Subtract two matrices\n"
               << "A: Add two matrices\n"
-              << "P: Print Commands List\n"; 
-}//end of printInstructions() 
+              << "P: Print Commands List\n";
+} //end of printInstructions()
 
 int main()
 {
     std::cout << "WELCOME TO BASIC MATRIX CALCULATOR APP!\n";
     char buffer[300];
     char *input;
-    
+
     printf("Command to do: \n");
     //get line of input
     input = fgets(buffer, 300, stdin);
-    
+
     //User Interface
     while (input != NULL)
     {
@@ -37,13 +37,13 @@ int main()
             printf("\n\nGoodbye...\n\n");
             exit(1);
         }
-        else if (strcmp(command, "S") == 0) 
+        else if (strcmp(command, "S") == 0)
         {
-            doSubtraction(); 
+            doSubtraction();
         }
-        else if (strcmp(command, "A") == 0) 
+        else if (strcmp(command, "A") == 0)
         {
-            doAddition(); 
+            doAddition();
         }
         //get next line of input
         printf("\nCommand to do: \n");
@@ -51,4 +51,4 @@ int main()
     }
 
     return 0;
-}
+} //end of main()
