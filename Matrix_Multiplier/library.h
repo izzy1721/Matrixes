@@ -11,6 +11,8 @@ void printInstructions();
 
 int main();
 
-void doSubtraction(); 
+void doSubtraction();
 
-void doAddition(); 
+void doAddition();
+
+void doMultiply(); 
