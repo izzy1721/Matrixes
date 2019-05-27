@@ -1,5 +1,4 @@
-#include <iostream>
-#include "Matrix.h"
+#include "library.h"
 
 Matrix *Matrix::subtraction(Matrix *A, Matrix *B)
 {
@@ -31,7 +30,7 @@ Matrix *Matrix::subtraction(Matrix *A, Matrix *B)
 Matrix *Matrix::addition(Matrix *A, Matrix *B)
 {
     //matrixes need to be the same size
-    //to add one from another
+    //to add one to another
     if (A->getXSize() != B->getXSize() && A->getYSize() != B->getYSize())
     {
         std::cout << "Matrixes must be same size to add\n";
@@ -54,3 +53,25 @@ Matrix *Matrix::addition(Matrix *A, Matrix *B)
 
     return result;
 } //end addition()
+
+Matrix *Matrix::multiplication(Matrix *A, Matrix *B)
+{
+    //matrix MxN can only be multiplied by matrix NxP
+    if (A->getYSize() != B->getXSize())
+    {
+        std::cout << "Matrixes must be proper dimmensions to multiply\n";
+        return nullptr;
+    }
+    //resulting matrix of above example will be an MxP matrix
+    //create result matrix
+    int sizeX = A->getXSize();
+    int sizeY = B->getYSize();
+    Matrix *result = new Matrix(sizeX, sizeY);
+
+    //multiply matricies
+    /*
+    logic here
+    */
+    std::cout << "NEED TO FINISH MULTIPLYING FUNCTION!\n";
+    return result;
+} //end multiplication()
