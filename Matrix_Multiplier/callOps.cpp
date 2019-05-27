@@ -1,16 +1,17 @@
 #include "library.h"
 
-void doSubtraction() {
+void doSubtraction()
+{
     std::cout << "Please enter a size for first matrix in form \"x y\":\n";
     int xSize = -1;
     int ySize = -1;
     std::cin >> xSize;
     std::cin >> ySize;
 
-    Matrix* A = new Matrix(xSize, ySize); 
+    Matrix *A = new Matrix(xSize, ySize);
     int maxElems = A->getMaxElem();
-    int count = 0; 
-    int input = 0; 
+    int count = 0;
+    int input = 0;
     std::cout << "Please enter " << maxElems << " numbers to\ninsert into the matrix:\n";
     while (count != maxElems)
     {
@@ -24,10 +25,10 @@ void doSubtraction() {
     std::cin >> xSize;
     std::cin >> ySize;
 
-    Matrix* B = new Matrix(xSize, ySize); 
+    Matrix *B = new Matrix(xSize, ySize);
     maxElems = B->getMaxElem();
-    count = 0; 
-    input = 0; 
+    count = 0;
+    input = 0;
     std::cout << "Please enter " << maxElems << " numbers to\ninsert into the matrix:\n";
     while (count != maxElems)
     {
@@ -39,33 +40,36 @@ void doSubtraction() {
     A->printArr();
     std::cout << "Matrix B:\n";
     B->printArr();
-    
-    Matrix* subtracted; 
-    subtracted = subtracted->subtraction(A, B); 
 
-    if (subtracted == nullptr) {
-        std::cout << "Error in computation\n"; 
+    Matrix *subtracted;
+    subtracted = subtracted->subtraction(A, B);
+
+    if (subtracted == nullptr)
+    {
+        std::cout << "Error in computation\n";
         return;
     }
 
     delete A;
-    delete B; 
+    delete B;
+    std::cout << "Resulting Matrix:\n";
     subtracted->printArr();
-    delete subtracted; 
+    delete subtracted;
 
-}//end of doSubtraction()
+} //end of doSubtraction()
 
-void doAddition() {
+void doAddition()
+{
     std::cout << "Please enter a size for first matrix in form \"x y\":\n";
     int xSize = -1;
     int ySize = -1;
     std::cin >> xSize;
     std::cin >> ySize;
 
-    Matrix* A = new Matrix(xSize, ySize); 
+    Matrix *A = new Matrix(xSize, ySize);
     int maxElems = A->getMaxElem();
-    int count = 0; 
-    int input = 0; 
+    int count = 0;
+    int input = 0;
     std::cout << "Please enter " << maxElems << " numbers to\ninsert into the matrix:\n";
     while (count != maxElems)
     {
@@ -79,10 +83,10 @@ void doAddition() {
     std::cin >> xSize;
     std::cin >> ySize;
 
-    Matrix* B = new Matrix(xSize, ySize); 
+    Matrix *B = new Matrix(xSize, ySize);
     maxElems = B->getMaxElem();
-    count = 0; 
-    input = 0; 
+    count = 0;
+    input = 0;
     std::cout << "Please enter " << maxElems << " numbers to\ninsert into the matrix:\n";
     while (count != maxElems)
     {
@@ -94,18 +98,20 @@ void doAddition() {
     A->printArr();
     std::cout << "Matrix B:\n";
     B->printArr();
-    
-    Matrix* sum; 
-    sum = sum->addition(A, B); 
 
-    if (sum == nullptr) {
-        std::cout << "Error in computation\n"; 
+    Matrix *sum;
+    sum = sum->addition(A, B);
+
+    if (sum == nullptr)
+    {
+        std::cout << "Error in computation\n";
         return;
     }
 
     delete A;
-    delete B; 
+    delete B;
+    std::cout << "Resulting Matrix:\n";
     sum->printArr();
-    delete sum; 
+    delete sum;
 
-}//end of doAddition()
+} //end of doAddition()
