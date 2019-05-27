@@ -54,6 +54,27 @@ Matrix *Matrix::addition(Matrix *A, Matrix *B)
     return result;
 } //end addition()
 
+int dotProduct(std::vector<int> A, std::vector<int> B)
+{
+    if (A.size() != B.size())
+    {
+        return -1;
+    }
+    int n = A.size();
+    int dotProduct = 0;
+    /*
+    Dot product for two vectors is computed as so:
+    Vector A = [1 2 3]
+    Vector B = [4 5 6]
+    Dot Product = 1*4 + 2*5 + 3*6 = 32
+    */
+    for (int i = 0; i < n; i++)
+    {
+        dotProduct += (A.at(i) * B.at(i));
+    }
+    return dotProduct;
+} //end of dotProduct()
+
 Matrix *Matrix::multiplication(Matrix *A, Matrix *B)
 {
     //matrix MxN can only be multiplied by matrix NxP
@@ -70,8 +91,20 @@ Matrix *Matrix::multiplication(Matrix *A, Matrix *B)
 
     //multiply matricies
     /*
-    logic here
+    logic here:
+    https://www.mathsisfun.com/algebra/matrix-multiplying.html
     */
     std::cout << "NEED TO FINISH MULTIPLYING FUNCTION!\n";
     return result;
 } //end multiplication()
+
+Matrix *Matrix::gauss(Matrix *A)
+{
+    /*
+    For reference on what Gauss-Jordan Elimination is 
+    and how to perform it: 
+    https://onlinecourses.science.psu.edu/statprogram/reviews/matrix-algebra/gauss-jordan-elimination
+    */
+    std::cout << "NEED TO FINISH GAUSS FUNCTION!\n";
+    return nullptr;
+} //end of gauss()
