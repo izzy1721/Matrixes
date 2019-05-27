@@ -5,6 +5,7 @@ Include all libraries used within this heder file for ease of use elsewhere.
 
 #include <iostream>
 #include <string.h>
+#include <vector>
 #include "Matrix.h"
 
 void printInstructions();
@@ -15,4 +16,6 @@ void doSubtraction();
 
 void doAddition();
 
-void doMultiply(); 
+void doMultiply();
+
+void doGauss();
