@@ -6,6 +6,7 @@ void printInstructions()
               << "Q: Quit Program\n"
               << "S: Subtract two matrices\n"
               << "A: Add two matrices\n"
+              << "M: Multiply two matricies\n"
               << "P: Print Commands List\n";
 } //end of printInstructions()
 
@@ -44,6 +45,10 @@ int main()
         else if (strcmp(command, "A") == 0)
         {
             doAddition();
+        }
+        else if (strcmp(command, "M") == 0)
+        {
+            doMultiply();
         }
         //get next line of input
         printf("\nCommand to do: \n");
