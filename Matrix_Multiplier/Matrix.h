@@ -55,9 +55,8 @@ public:
         delete[] arr;
     }
     
-    //forward definitions of methods to make outside of class 
-    //update makefile when adding in a cpp file for newly created
-    //methods. Test locally before committing
+    //Forward definitions of methods to make outside of class 
+    //in the ops file. Test locally before committing.
     Matrix *subtraction(Matrix *A, Matrix *B);
 
     Matrix *addition(Matrix *A, Matrix *B);
