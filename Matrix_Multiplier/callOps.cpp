@@ -40,7 +40,7 @@ void doSubtraction() {
     std::cout << "Matrix B:\n";
     B->printArr();
     
-    Matrix* subtracted = new Matrix(xSize,ySize); 
+    Matrix* subtracted; 
     subtracted = subtracted->subtraction(A, B); 
 
     if (subtracted == nullptr) {
@@ -95,7 +95,7 @@ void doAddition() {
     std::cout << "Matrix B:\n";
     B->printArr();
     
-    Matrix* sum = new Matrix(xSize,ySize); 
+    Matrix* sum; 
     sum = sum->addition(A, B); 
 
     if (sum == nullptr) {
