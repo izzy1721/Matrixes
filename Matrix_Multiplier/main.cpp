@@ -4,7 +4,7 @@
 int main()
 {
     std::cout << "WELCOME TO BASIC MATRIX CALCULATOR APP!\n";
-    std::cout << "Please enter a size for matrix in form \"x y\" or use default 2x2 matrix by just pressing enter twice:";
+    std::cout << "Please enter a size for matrix in form \"x y\":\n";
     int xSize = -1;
     int ySize = -1;
     std::cin >> xSize;
