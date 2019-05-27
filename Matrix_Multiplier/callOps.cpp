@@ -116,7 +116,8 @@ void doAddition()
 
 } //end of doAddition()
 
-void doMultiply() {
+void doMultiply()
+{
     std::cout << "Please enter a size for first matrix in form \"x y\":\n";
     int xSize = -1;
     int ySize = -1;
@@ -158,7 +159,7 @@ void doMultiply() {
 
     Matrix *product;
 
-    product = product->multiplication(A, B); 
+    product = product->multiplication(A, B);
 
     if (product == nullptr)
     {
@@ -172,3 +173,37 @@ void doMultiply() {
     product->printArr();
     delete product;
 } //end of doMultiply()
+
+void doGauss()
+{
+    std::cout << "Please enter a size for matrix in form \"x y\":\n";
+    int xSize = -1;
+    int ySize = -1;
+    std::cin >> xSize;
+    std::cin >> ySize;
+
+    Matrix *A = new Matrix(xSize, ySize);
+    int maxElems = A->getMaxElem();
+    int count = 0;
+    int input = 0;
+    std::cout << "Please enter " << maxElems << " numbers to\ninsert into the matrix:\n";
+    while (count != maxElems)
+    {
+        std::cin >> input;
+        A->push(input);
+        count++;
+    }
+    A->printArr();
+
+    Matrix *solved;
+    solved = solved->gauss(A);
+    if (solved == nullptr)
+    {
+        std::cout << "Error in computation\n";
+        return;
+    }
+
+    delete A;
+    solved->printArr();
+    delete solved;
+} //end of doGauss()
