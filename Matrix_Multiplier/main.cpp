@@ -1,37 +1,54 @@
-#include <iostream>
-#include "Matrix.h"
+#include "library.h"
+
+void printInstructions()
+{
+    std::cout << "Commands:\n"
+              << "Q: Quit Program\n"
+              << "S: Subtract two matrices\n"
+              << "A: Add two matrices\n"
+              << "P: Print Commands List\n"; 
+}//end of printInstructions() 
 
 int main()
 {
     std::cout << "WELCOME TO BASIC MATRIX CALCULATOR APP!\n";
-    std::cout << "Please enter a size for matrix in form \"x y\":\n";
-    int xSize = -1;
-    int ySize = -1;
-    std::cin >> xSize;
-    std::cin >> ySize;
-    Matrix *test;
-    if (xSize == -1 || ySize == -1)
+    char buffer[300];
+    char *input;
+    
+    printf("Command to do: \n");
+    //get line of input
+    input = fgets(buffer, 300, stdin);
+    
+    //User Interface
+    while (input != NULL)
     {
-        test = new Matrix;
+        //get the input from the user
+        char *command;
+        command = strtok(input, " \n\t");
+        //if no command is given
+        if (command == NULL)
+        {
+            printf("\n");
+            printf("No command given\n");
+        }
+        //if user wants to quit early
+        else if (strcmp(command, "Q") == 0)
+        {
+            printf("\n\nGoodbye...\n\n");
+            exit(1);
+        }
+        else if (strcmp(command, "S") == 0) 
+        {
+            doSubtraction(); 
+        }
+        else if (strcmp(command, "A") == 0) 
+        {
+            doAddition(); 
+        }
+        //get next line of input
+        printf("\nCommand to do: \n");
+        input = fgets(buffer, 300, stdin);
     }
-    else
-    {
-        test = new Matrix(xSize, ySize);
-    }
-
-    int maxElems = test->getMaxElem();
-    int count = 0;
-    int input = 0;
-
-    std::cout << "Please enter " << maxElems << " numbers to\ninsert into the matrix:\n";
-    while (count != maxElems)
-    {
-        std::cin >> input;
-        test->push(input);
-        count++;
-    }
-
-    test->printArr();
 
     return 0;
 }
