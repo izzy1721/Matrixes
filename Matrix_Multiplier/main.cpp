@@ -39,6 +39,10 @@ int main()
             printf("\n\nGoodbye...\n\n");
             exit(1);
         }
+        else if (strcmp(command, "P") == 0)
+        {
+            printInstructions();
+        }
         else if (strcmp(command, "S") == 0)
         {
             doSubtraction();
