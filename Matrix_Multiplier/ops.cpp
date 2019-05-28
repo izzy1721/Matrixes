@@ -128,6 +128,21 @@ Matrix *Matrix::multiplication(Matrix *A, Matrix *B)
     return result;
 } //end multiplication()
 
+Matrix *scaling(Matrix *A, int scaler, int rowToScale)
+{
+    for (int i = 0; i < A->getYSize(); i++)
+    {
+        for (int j = 0; j < A->getXSize(); j++)
+        {
+            if (j % A->getXSize() == rowToScale)
+            {
+                A->getArr()[j][i] *= scaler;
+            }
+        }
+    }
+    return A;
+} //end of scaling()
+
 Matrix *Matrix::gauss(Matrix *A)
 {
     /*
