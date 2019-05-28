@@ -77,6 +77,11 @@ int dotProduct(std::vector<int> A, std::vector<int> B)
 
 Matrix *Matrix::multiplication(Matrix *A, Matrix *B)
 {
+    /*
+    logic of how to multiply matricies here:
+    https://www.mathsisfun.com/algebra/matrix-multiplying.html
+    */
+
     //matrix MxN can only be multiplied by matrix NxP
     if (A->getYSize() != B->getXSize())
     {
@@ -89,12 +94,37 @@ Matrix *Matrix::multiplication(Matrix *A, Matrix *B)
     int sizeY = B->getYSize();
     Matrix *result = new Matrix(sizeX, sizeY);
 
-    //multiply matricies
-    /*
-    logic here:
-    https://www.mathsisfun.com/algebra/matrix-multiplying.html
-    */
-    std::cout << "NEED TO FINISH MULTIPLYING FUNCTION!\n";
+    std::vector<int> currentRow;
+    std::vector<int> currentCol;
+    int insertThis;
+
+    //multiply matricies by computing the dot products of rows of
+    //A and columns of B and pushing these values to result
+    for (int i = 0; i < sizeY; i++)
+    {
+        for (int j = 0; j < sizeX; j++)
+        {
+            for (int l = 0; l < B->getXSize(); l++)
+            {
+                //get cols of B
+                currentCol.push_back(B->getArr()[l][i]);
+            }
+
+            for (int k = 0; k < A->getYSize(); k++)
+            {
+                //grab rows of A
+                currentRow.push_back(A->getArr()[j][k]);
+            }
+            //compute dot product of current row and column
+            insertThis = dotProduct(currentRow, currentCol);
+            //push this value into the result matrix
+            result->push(insertThis);
+            //clear row and col vectors to get values again
+            currentRow.clear();
+            currentCol.clear();
+        } //end of j loop
+    }     //end of i loop
+
     return result;
 } //end multiplication()
 
